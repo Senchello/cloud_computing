@@ -8,6 +8,7 @@ on:
 jobs:
   build-and-deploy:
     name: Build and Deploy to AWS ECS
+    environment: main_env
     runs-on: ubuntu-latest
 
     steps:
