@@ -35,8 +35,8 @@ jobs:
           IMAGE_TAG: latest
         run: |
           docker build -t $ECR_REPOSITORY:$IMAGE_TAG -f Dockerfile.movies .
-          docker tag $ECR_REPOSITORY:$IMAGE_TAG ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
-          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
+          docker tag $ECR_REPOSITORY:$IMAGE_TAG 783764601213.dkr.ecr.eu-north-1.amazonaws.com//$ECR_REPOSITORY:$IMAGE_TAG
+          docker push 783764601213.dkr.ecr.eu-north-1.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
 
       # 5. Оновлення ECS сервісу
       - name: Deploy to Amazon ECS
