@@ -1,0 +1,20 @@
+# Використовуємо офіційний образ Python
+FROM python:3.9
+
+# Встановлюємо робочу директорію в контейнері
+WORKDIR /app
+
+# Додаємо робочу директорію до PYTHONPATH
+ENV PYTHONPATH=/app
+
+# Копіюємо файли проєкту до контейнера
+COPY . /app
+
+# Встановлюємо залежності для сервісу
+RUN pip install --no-cache-dir Flask requests boto3 prometheus-flask-exporter
+
+# Відкриваємо порт для Flask (5001)
+EXPOSE 5001
+
+# Запускаємо сервіс "movies"
+CMD ["python", "movies.py"]
