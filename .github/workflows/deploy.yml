@@ -42,7 +42,7 @@ jobs:
       - name: Deploy to Amazon ECS
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
-          task-definition: movies-service-task
+          task-definition: movies-service-task:4
           service: movies-service
           cluster: movies-cluster
           wait-for-service-stability: true
