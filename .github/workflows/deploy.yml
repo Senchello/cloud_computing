@@ -16,9 +16,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Debug AWS_REGION
-        run: echo "AWS_REGION=${{ secrets.AWS_REGION }}"
-
       # 2. Логін у AWS
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
